@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "cosmosmod",
+  "version": "${version}",
+  "name": "Cosmos Mod",
+  "description": "",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/FaintLocket424/CosmosModosmos-Mod"
+  },
+  "license": "MIT",
+  "icon": "assets/cosmosmod/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "space.faintlocket.cosmosmod.client.CosmosModClient"
+    ],
+    "main": [
+      "space.faintlocket.cosmosmod.CosmosMod"
+    ]
+  },
+  "mixins": [
+    "cosmosmod.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
