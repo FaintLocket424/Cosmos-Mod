@@ -3,10 +3,14 @@
   "id": "cosmosmod",
   "version": "${version}",
   "name": "Cosmos Mod",
-  "description": "",
-  "authors": [],
+  "description": "A Minecraft space mod.",
+  "authors": [
+      "FaintLocket424"
+  ],
   "contact": {
-    "repo": "https://github.com/FaintLocket424/CosmosModosmos-Mod"
+    "website": "https://modrinth.com/mod/cosmos-mod",
+    "repo": "https://github.com/FaintLocket424/Cosmos-Mod",
+    "issues": "https://github.com/FaintLocket424/Cosmos-Mod/issues"
   },
   "license": "MIT",
   "icon": "assets/cosmosmod/icon.png",
@@ -23,8 +27,8 @@
     "cosmosmod.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=${loader_version}",
     "fabric": "*",
-    "minecraft": "${minecraft_version}"
+    "minecraft": ">=1.20",
+    "java": ">=17"
   }
 }
