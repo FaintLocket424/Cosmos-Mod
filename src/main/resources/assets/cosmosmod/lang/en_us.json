@@ -1,4 +1,9 @@
 {
 	"modmenu.nameTranslation.cosmosmod": "Cosmos",
-	"modmenu.descriptionTranslation.cosmosmod": "A Minecraft space mod."
+	"modmenu.descriptionTranslation.cosmosmod": "A Minecraft space mod.",
+	"itemGroup.cosmosmod.cosmos_item_group": "Cosmos",
+	"block.cosmosmod.silicon_ore": "Silicon Ore",
+	"block.cosmosmod.deepslate_silicon_ore": "Deepslate Silicon Ore",
+	"block.cosmosmod.aluminium_ore": "Aluminium Ore",
+	"block.cosmosmod.deepslate_aluminium_ore": "Deepslate Aluminium Ore"
 }

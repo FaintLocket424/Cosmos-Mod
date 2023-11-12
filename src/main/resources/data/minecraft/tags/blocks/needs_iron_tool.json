@@ -1,0 +1,9 @@
+{
+	"replace": false,
+	"values": [
+		"cosmosmod:silicon_ore",
+		"cosmosmod:deepslate_silicon_ore",
+		"cosmosmod:aluminium_ore",
+		"cosmosmod:deepslate_aluminium_ore"
+	]
+}

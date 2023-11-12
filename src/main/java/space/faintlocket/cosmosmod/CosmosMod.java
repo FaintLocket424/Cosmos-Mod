@@ -21,8 +21,10 @@ import net.minecraft.world.gen.feature.PlacedFeature;
 
 public class CosmosMod implements ModInitializer {
     private static final String MOD_ID = "cosmosmod";
-    private static final Block SILICON_ORE_BLOCK = new Block(FabricBlockSettings.create().strength(3.0f));
-    private static final Block DEEPSLATE_SILICON_ORE_BLOCK = new Block(FabricBlockSettings.create().strength(4.5f));
+    private static final Block SILICON_ORE_BLOCK = new Block(FabricBlockSettings.create().strength(3.0f).requiresTool());
+    private static final Block DEEPSLATE_SILICON_ORE_BLOCK = new Block(FabricBlockSettings.create().strength(4.5f).requiresTool());
+    private static final Block ALUMINIUM_ORE_BLOCK = new Block(FabricBlockSettings.create().strength(3.0f).requiresTool());
+    private static final Block DEEPSLATE_ALUMINIUM_ORE_BLOCK = new Block(FabricBlockSettings.create().strength(4.5f).requiresTool());
     private static final ItemGroup COSMOS_ITEM_GROUP = FabricItemGroup.builder()
             .icon(() -> new ItemStack(SILICON_ORE_BLOCK))
             .displayName(Text.translatable(String.format("itemGroup.%s.cosmos_item_group", MOD_ID)))
@@ -32,16 +34,32 @@ public class CosmosMod implements ModInitializer {
             })
             .build();
     private static final RegistryKey<PlacedFeature> SILICON_ORE_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID, "silicon_ore"));
+    private static final RegistryKey<PlacedFeature> ALUMINIUM_ORE_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID, "aluminium_ore"));
 
     @Override
     public void onInitialize() {
+        registerItems();
+        registerOres();
+    }
+
+    private void registerItems() {
         Registry.register(Registries.ITEM_GROUP, new Identifier(MOD_ID, "cosmos_item_group"), COSMOS_ITEM_GROUP);
 
         Registry.register(Registries.BLOCK, new Identifier(MOD_ID, "silicon_ore"), SILICON_ORE_BLOCK);
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "silicon_ore"), new BlockItem(SILICON_ORE_BLOCK, new FabricItemSettings()));
+
         Registry.register(Registries.BLOCK, new Identifier(MOD_ID, "deepslate_silicon_ore"), DEEPSLATE_SILICON_ORE_BLOCK);
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "deepslate_silicon_ore"), new BlockItem(DEEPSLATE_SILICON_ORE_BLOCK, new FabricItemSettings()));
 
+        Registry.register(Registries.BLOCK, new Identifier(MOD_ID, "aluminium_ore"), ALUMINIUM_ORE_BLOCK);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "aluminium_ore"), new BlockItem(ALUMINIUM_ORE_BLOCK, new FabricItemSettings()));
+
+        Registry.register(Registries.BLOCK, new Identifier(MOD_ID, "deepslate_aluminium_ore"), DEEPSLATE_ALUMINIUM_ORE_BLOCK);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "deepslate_aluminium_ore"), new BlockItem(DEEPSLATE_ALUMINIUM_ORE_BLOCK, new FabricItemSettings()));
+    }
+
+    private void registerOres() {
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, SILICON_ORE_PLACED_KEY);
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ALUMINIUM_ORE_PLACED_KEY);
     }
 }

@@ -1,4 +1,9 @@
 {
 	"modmenu.nameTranslation.cosmosmod": "It be da sea o' the skies, matey!",
-	"modmenu.descriptionTranslation.cosmosmod": "I wonder what we can a pluderr..."
+	"modmenu.descriptionTranslation.cosmosmod": "I wonder what we can a pluderr...",
+	"itemGroup.cosmosmod.cosmos_item_group": "Sea o' the Skies!",
+	"block.cosmosmod.silicon_ore": "Rusty Sand",
+	"block.cosmosmod.deepslate_silicon_ore": "Shadowy Rusty Sand",
+	"block.cosmosmod.aluminium_ore": "Gleaming Buccaneer Bounty",
+	"block.cosmosmod.deepslate_aluminium_ore": "Shadowy Buccaneer Bounty"
 }
